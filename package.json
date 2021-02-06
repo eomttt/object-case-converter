@@ -1,6 +1,6 @@
 {
-  "name": "object-case-converter",
-  "version": "1.0.0",
+  "name": "eomttt/object-case-converter",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:eomttt/object-case-converter.git",
   "author": "eomttt",
