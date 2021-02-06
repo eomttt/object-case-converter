@@ -1,4 +1,4 @@
-const decamalize = (object) => {
+export const decamelize = (object) => {
   const keys = Object.keys(object);
   const newKeys = keys.map((key) => {
     return key
@@ -19,12 +19,12 @@ const decamalize = (object) => {
     const obj = object[keys[index]];
     return {
       ...acc,
-      [cur]: typeof obj === 'object' ? decamalize(obj) : obj,
+      [cur]: typeof obj === 'object' ? decamelize(obj) : obj,
     }
   }, {})
 }
 
-const camelize = (object) => {
+export const camelize = (object) => {
   const keys = Object.keys(object);
   const newKeys = keys.map((key) => {
     return key.replace(/[_]+(\w)/g, (match, p1) => {
