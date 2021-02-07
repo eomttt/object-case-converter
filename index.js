@@ -21,9 +21,19 @@ const decamelize = (object) => {
 
   return newKeys.reduce((acc, cur, index) => {
     const obj = object[keys[index]];
+
+    let value = obj;
+    if (Array.isArray(obj)) {
+      value = obj.map((item) => {
+        return typeof item === 'object' ? decamelize(item): item;
+      });
+    } else if (typeof obj === 'object') {
+      value = decamelize(obj);
+    }
+
     return {
       ...acc,
-      [cur]: typeof obj === 'object' ? decamelize(obj) : obj,
+      [cur]: value,
     }
   }, {})
 }
@@ -42,9 +52,19 @@ const camelize = (object) => {
 
   return newKeys.reduce((acc, cur, index) => {
     const obj = object[keys[index]];
+
+    let value = obj;
+    if (Array.isArray(obj)) {
+      value = obj.map((item) => {
+        return typeof item === 'object' ? camelize(item): item;
+      });
+    } else if (typeof obj === 'object') {
+      value = camelize(obj);
+    }
+
     return {
       ...acc,
-      [cur]: typeof obj === 'object' ? camelize(obj) : obj,
+      [cur]: value,
     }
   }, {})
 }
