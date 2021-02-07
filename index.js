@@ -1,4 +1,8 @@
-export const decamelize = (object) => {
+const decamelize = (object) => {
+  if (!object) {
+    return object;
+  }
+
   const keys = Object.keys(object);
   const newKeys = keys.map((key) => {
     return key
@@ -24,7 +28,11 @@ export const decamelize = (object) => {
   }, {})
 }
 
-export const camelize = (object) => {
+const camelize = (object) => {
+  if (!object) {
+    return object;
+  }
+
   const keys = Object.keys(object);
   const newKeys = keys.map((key) => {
     return key.replace(/[_]+(\w)/g, (match, p1) => {
@@ -40,3 +48,6 @@ export const camelize = (object) => {
     }
   }, {})
 }
+
+module.exports.decamelize = decamelize;
+module.exports.camelize = camelize;

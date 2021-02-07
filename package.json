@@ -1,6 +1,6 @@
 {
   "name": "object-key-converter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "repository": "git@github.com:eomttt/object-case-converter.git",
   "description": "js object key case converter. camelize, decamelize",
