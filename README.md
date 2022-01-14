@@ -1,5 +1,11 @@
 # object-case-converter
 
+## Installation
+```sh
+npm i object-key-converter
+```
+
+
 ## decamelize
 ```js
 const object = {
